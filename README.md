@@ -1,5 +1,5 @@
-hankquinlan.github.io
-=====================
-This is demo data created by [Jonathan McGlone](http://jmcglone.com) and used in a [step-by-step beginners guide](http://jmcglone.com/guides/github-pages) to creating and hosting a personal website using GitHub and Jekyll. You can view the demo data at <http://hankquinlan.github.io> and read the guide at <http://jmcglone.com/guides/github-pages>. 
+Hi, I'm Rohith Krishna!
 
-Users are free to copy and re-use any and all of the code contained here without contacting me.
+I recently graduated from UC Berkeley, studying Chemical Biology and Computer Science. I spent most of my time working on projects in biochemistry and protein engineering in Prof. Jay Keasling's lab. I am interested in computational structural biology, machine learning and protein engineering. 
+
+Outside of science, I enjoy long distance running, hip hop music and watching professional sports. 
