@@ -35,10 +35,10 @@ All structures with a paired VH/VL domain with at most 99% sequence similarity a
 The model was trained for 30 epochs with a batch size of 4 and the epoch where the training and validation loss were closest was chosen for evaluation. The Adam optimizer was used with an initial learning rate of 0.01 and reduced when the model was plateuing. The outputs were normalized with the Softmax function and the bucket with the highest probability was chosen as the model prediction when evaluating the model against the experimental structures. 
 
 <p align="center">
-<img align="center" src="/images/train_loss.png">
+<img src="/images/train_loss.png">
+</p>
 
 <caption>Training and validation loss during each training epoch</caption>
-</p>
 
 This model was trained with vanilla pytorch on my personal AWS instance on a NVIDIA k80 GPU in about 17 minutes. Inference was also performed on the same machine. I have since migrated to using pytorch lightning for my training to avoid pytorch version and hardware dependency issues. 
 
@@ -47,9 +47,9 @@ The model had a 0.45 weighted average precision on the RosettaAntibody benchmark
 
 <p align="center">
 <img src="/images/test_confusion.png">
+</p>
 
 <caption>Confusion matrix for the model on the test set</caption>
-</p>
 
 Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface areas trained a separate Random Forest Regressor on each residue position in the Fv with handcrafted features. While this approach was accurate, it requires training over 200 models and cannot handle sequences with variable CDR lengths if similar sets are not found in the training set. 
 
@@ -59,9 +59,9 @@ Antibody Fv sequences have a high amount of conservation except for 6 loops, 3 i
 
 <p align="center">
 <img src="/images/cdr_confusion.png">
+</p>
 
 <caption>Confusion matrix for the model on each CDR in the test set. The x axis represents predicted values and the y axis represents the experimental values</caption>
-</p>
 
 As expected the predictions for the CDRH3 are much worse than the predictions for the other CDRs. The CDRL3 also was harder to model than the other CDRs in the test set. This is a limitation of the method especially in the protein design context because the areas we would design would be the CDRs. Further work with different model architectures might be able to improve the predictions in these CDR regions. 
 
@@ -73,11 +73,11 @@ I chose a case study protein (PDB ID: 1MFA) where the CDRH3 had low B-factors an
 
 ![1MFA structure](/images/1mfa_structure.png)
 
-On the left, the framework region with high B-factors. It is a loop region and has multiple prolines and glycines which would indicate that it would be flexible. One the right, the CDRH3 region with low B-factors. This region has bulky residues that might hold it in place and make it more rigid. 
+On the left, the framework region with high B-factors. It is a loop region and has multiple prolines and glycines which would indicate that it would be flexible. One the right, the CDRH3 region with low B-factors. This region has bulky residues that might hold it in place and make it more rigid.
 
 ![Flexibility](/images/flexibility.png)
 
-The maximum probability of the SASA predictions of the residues with high B-factors are much lower than the residues with low B-factors indicating that the model believes there are multiple orientations the residue can be in. 
+<caption>The maximum probability of the SASA predictions of the residues with high B-factors are much lower than the residues with low B-factors indicating that the model believes there are multiple orientations the residue can be in.</caption>
 
 While this is a promising early result, it is hard to conclude that this means that the model has learned about protein flexibility because there are other variables such as the model’s ability to make better predictions for residues with low solvent exposure. While the model’s confidence of predicting solvent exposure at residue 42 is high, residue 42 is a glycine that immediately follows a proline which might mean that both conformations it takes are highly solvent exposed. Further work must be done to conclude that our model is predicting across multiple conformations or just is inaccurate in regions with high solvent exposure.   
 
