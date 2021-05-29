@@ -47,11 +47,12 @@ This model was trained with vanilla pytorch on my personal AWS instance on a NVI
 **Overall Model Performance**
 The model had a 0.45 weighted average precision on the RosettaAntibody benchmark set. The model had significantly higher predictive power on buried positions than exposed positions. 
 
-<p align="center">
-<img src="/images/test_confusion.png">
-</p>
-
-<caption style="text-align:center">Confusion matrix for the model on the test set</caption>
+<figure>
+	<p align="center">
+		<img src="/images/test_confusion.png">
+	</p>
+	<figcaption style="text-align:center">Confusion matrix for the model on the test set</caption>
+</figure>
 
 Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface areas trained a separate Random Forest Regressor on each residue position in the Fv with handcrafted features. While this approach was accurate, it requires training over 200 models and cannot handle sequences with variable CDR lengths if similar sets are not found in the training set. 
 
@@ -59,11 +60,12 @@ Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface
 
 Antibody Fv sequences have a high amount of conservation except for 6 loops, 3 in the heavy chain and 3 in the light chain called complementarity determining regions (CDRs). The CDRs go through rapid evolution which allows them to gain specificity to antigens they have never seen before. Five of the six CDRs adopt some well known folds but the CDRH3 is notoriously difficult to model and specifically important for binding. I calculated the confusion matrices for all the CDRs in the test sets using the Chothia definition.
 
-<p align="center">
-<img src="/images/cdr_confusion.png">
-</p>
-
-<caption style="text-align:center">Confusion matrix for the model on each CDR in the test set. The x axis represents predicted values and the y axis represents the experimental values</caption>
+<figure>
+	<p align="center">
+		<img src="/images/cdr_confusion.png">
+	</p>
+	<figcaption style="text-align:center">Confusion matrix for the model on each CDR in the test set. The x axis represents predicted values and the y axis represents the experimental values</figcaption>
+</figure>
 
 As expected the predictions for the CDRH3 are much worse than the predictions for the other CDRs. The CDRL3 also was harder to model than the other CDRs in the test set. This is a limitation of the method especially in the protein design context because the areas we would design would be the CDRs. Further work with different model architectures might be able to improve the predictions in these CDR regions. 
 
