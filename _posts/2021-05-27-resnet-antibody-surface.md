@@ -18,7 +18,7 @@ Here, I’m going to describe a small project I did last year that uses a ResNet
 
 ![Antibody Surface](/images/5d71_surface.png)
 
-Image of an antibody Fv surface. We want to predict how much surface area each residue contributes to the entire surface.
+<caption>Image of an antibody Fv surface. We want to predict how much surface area each residue contributes to the entire surface. </caption>
 
 **Model Architecture**
 
@@ -34,14 +34,18 @@ All structures with a paired VH/VL domain with at most 99% sequence similarity a
 
 The model was trained for 30 epochs with a batch size of 4 and the epoch where the training and validation loss were closest was chosen for evaluation. The Adam optimizer was used with an initial learning rate of 0.01 and reduced when the model was plateuing. The outputs were normalized with the Softmax function and the bucket with the highest probability was chosen as the model prediction when evaluating the model against the experimental structures. 
 
-![Train Loss](/images/train_loss.png)
+<img align="center" src="/images/train_loss.png">
+
+<caption>Training and validation loss during each training epoch</caption>
 
 This model was trained with vanilla pytorch on my personal AWS instance on a NVIDIA k80 GPU in about 17 minutes. Inference was also performed on the same machine. I have since migrated to using pytorch lightning for my training to avoid pytorch version and hardware dependency issues. 
 
 **Overall Model Performance**
 The model had a 0.45 weighted average precision on the RosettaAntibody benchmark set. The model had significantly higher predictive power on buried positions than exposed positions. 
 
-![Test Confusion](/images/test_confusion.png)
+<img align="center" src="/images/test_confusion.png">
+
+<caption>Confusion matrix for the model on the test set</caption>
 
 Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface areas trained a separate Random Forest Regressor on each residue position in the Fv with handcrafted features. While this approach was accurate, it requires training over 200 models and cannot handle sequences with variable CDR lengths if similar sets are not found in the training set. 
 
@@ -49,7 +53,9 @@ Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface
 
 Antibody Fv sequences have a high amount of conservation except for 6 loops, 3 in the heavy chain and 3 in the light chain called complementarity determining regions (CDRs). The CDRs go through rapid evolution which allows them to gain specificity to antigens they have never seen before. Five of the six CDRs adopt some well known folds but the CDRH3 is notoriously difficult to model and specifically important for binding. I calculated the confusion matrices for all the CDRs in the test sets using the Chothia definition.
 
-![CDR Confusion](/images/cdr_confusion.png)
+<img align="center" src="/images/cdr_confusion.png">
+
+<caption>Confusion matrix for the model on each CDR in the test set. The x axis represents predicted values and the y axis represents the experimental values</caption>
 
 As expected the predictions for the CDRH3 are much worse than the predictions for the other CDRs. The CDRL3 also was harder to model than the other CDRs in the test set. This is a limitation of the method especially in the protein design context because the areas we would design would be the CDRs. Further work with different model architectures might be able to improve the predictions in these CDR regions. 
 
