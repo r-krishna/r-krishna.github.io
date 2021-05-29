@@ -3,7 +3,7 @@ layout: post
 title: "Are ResNets Antibody Surface Learners?"
 date: 2021-05-27
 ---
-*TLDR: I trained a neural network to predict how much area of each amino acid in an antibody structure is on the surface. The predictor worked really well for amino acids that had low contributions to the surface but was not as good for highly surface exposed amino acids. This model has future applications in antibody design and engineering.*
+*TLDR: I trained a neural network to predict how much area of each amino acid in an antibody structure can interact with other molecules. The predictor worked really well for amino acids that were buried in the structure but was not as good for highly surface exposed amino acids. This model has future applications in antibody design and engineering.*
 
 **Introduction**
 
