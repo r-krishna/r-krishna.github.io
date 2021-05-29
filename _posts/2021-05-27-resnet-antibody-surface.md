@@ -3,6 +3,7 @@ layout: post
 title: "Are ResNets Antibody Surface Learners?"
 date: 2021-05-27
 ---
+*TLDR: I trained a neural network to predict how much area of each amino acid in an antibody structure is ont he surface. The predictor worked really well for amino acids that were not contributing to the surface but was not as good for highly surface exposed amino acids. This model has future applications in antibody design and engineering.*
 
 **Introduction**
 
@@ -18,7 +19,7 @@ Here, I’m going to describe a small project I did last year that uses a ResNet
 
 ![Antibody Surface](/images/5d71_surface.png)
 
-<caption>Image of an antibody Fv surface. We want to predict how much surface area each residue contributes to the entire surface. </caption>
+<caption style="text-align:center">Image of an antibody Fv surface. We want to predict how much surface area each residue contributes to the entire surface. </caption>
 
 **Model Architecture**
 
@@ -38,7 +39,7 @@ The model was trained for 30 epochs with a batch size of 4 and the epoch where t
 <img src="/images/train_loss.png">
 </p>
 
-<caption>Training and validation loss during each training epoch</caption>
+<caption style="text-align:center">Training and validation loss during each training epoch</caption>
 
 This model was trained with vanilla pytorch on my personal AWS instance on a NVIDIA k80 GPU in about 17 minutes. Inference was also performed on the same machine. I have since migrated to using pytorch lightning for my training to avoid pytorch version and hardware dependency issues. 
 
@@ -49,7 +50,7 @@ The model had a 0.45 weighted average precision on the RosettaAntibody benchmark
 <img src="/images/test_confusion.png">
 </p>
 
-<caption>Confusion matrix for the model on the test set</caption>
+<caption style="text-align:center">Confusion matrix for the model on the test set</caption>
 
 Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface areas trained a separate Random Forest Regressor on each residue position in the Fv with handcrafted features. While this approach was accurate, it requires training over 200 models and cannot handle sequences with variable CDR lengths if similar sets are not found in the training set. 
 
@@ -61,7 +62,7 @@ Antibody Fv sequences have a high amount of conservation except for 6 loops, 3 i
 <img src="/images/cdr_confusion.png">
 </p>
 
-<caption>Confusion matrix for the model on each CDR in the test set. The x axis represents predicted values and the y axis represents the experimental values</caption>
+<caption style="text-align:center">Confusion matrix for the model on each CDR in the test set. The x axis represents predicted values and the y axis represents the experimental values</caption>
 
 As expected the predictions for the CDRH3 are much worse than the predictions for the other CDRs. The CDRL3 also was harder to model than the other CDRs in the test set. This is a limitation of the method especially in the protein design context because the areas we would design would be the CDRs. Further work with different model architectures might be able to improve the predictions in these CDR regions. 
 
@@ -77,7 +78,7 @@ On the left, the framework region with high B-factors. It is a loop region and h
 
 ![Flexibility](/images/flexibility.png)
 
-<caption>The maximum probability of the SASA predictions of the residues with high B-factors are much lower than the residues with low B-factors indicating that the model believes there are multiple orientations the residue can be in.</caption>
+<caption style="text-align:center">The maximum probability of the SASA predictions of the residues with high B-factors are much lower than the residues with low B-factors indicating that the model believes there are multiple orientations the residue can be in.</caption>
 
 While this is a promising early result, it is hard to conclude that this means that the model has learned about protein flexibility because there are other variables such as the model’s ability to make better predictions for residues with low solvent exposure. While the model’s confidence of predicting solvent exposure at residue 42 is high, residue 42 is a glycine that immediately follows a proline which might mean that both conformations it takes are highly solvent exposed. Further work must be done to conclude that our model is predicting across multiple conformations or just is inaccurate in regions with high solvent exposure.   
 
