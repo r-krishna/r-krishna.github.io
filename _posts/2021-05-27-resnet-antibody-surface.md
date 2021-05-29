@@ -43,3 +43,43 @@ The model had a 0.45 weighted average precision on the RosettaAntibody benchmark
 
 ![Test Confusion](/images/test_confusion.png)
 
+Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface areas trained a separate Random Forest Regressor on each residue position in the Fv with handcrafted features. While this approach was accurate, it requires training over 200 models and cannot handle sequences with variable CDR lengths if similar sets are not found in the training set. 
+
+**Model Performance on CDR regions**
+
+Antibody Fv sequences have a high amount of conservation except for 6 loops, 3 in the heavy chain and 3 in the light chain called complementarity determining regions (CDRs). The CDRs go through rapid evolution which allows them to gain specificity to antigens they have never seen before. Five of the six CDRs adopt some well known folds but the CDRH3 is notoriously difficult to model and specifically important for binding. I calculated the confusion matrices for all the CDRs in the test sets using the Chothia definition.
+
+![CDR Confusion](/images/cdr_confusion.png)
+
+As expected the predictions for the CDRH3 are much worse than the predictions for the other CDRs. The CDRL3 also was harder to model than the other CDRs in the test set. This is a limitation of the method especially in the protein design context because the areas we would design would be the CDRs. Further work with different model architectures might be able to improve the predictions in these CDR regions. 
+
+**Model Flexibility Predictions**
+
+One reason our predictions might be weaker at high solvent exposure is highly solvent exposed residues tend to be more flexible because they have more ability to move around when contacting solvents or other molecules. I hypothesized that the reduction of accuracy for highly solvent exposed residues might actually be taking into account alternative conformations that the protein could take and predicting the protein flexibility as model uncertainty. To test this hypothesis, I looked at the crystallographic B-factors for a structure in our test set which represent how difficult it was to resolve the atoms in the residue. A high B-factor indicates higher flexibility while a lower B-factor indicates less flexibility. This is not a perfect measure of protein flexibility but has been used to identify flexible residues before.
+
+I chose a case study protein (PDB ID: 1MFA) where the CDRH3 had low B-factors and a region in the framework had high B-factors to see if the distribution of predicted solvent areas encoded anything about the flexibility of those residues. Since the model performed worse on the CDRH3 region and better on framework regions in general, this will hopefully eliminate the possibility that the distribution of probabilities was due to the model being confused versus it actually learning something about the system. 
+
+![1MFA structure](/images/1mfa_structure.png)
+
+On the left, the framework region with high B-factors. It is a loop region and has multiple prolines and glycines which would indicate that it would be flexible. One the right, the CDRH3 region with low B-factors. This region has bulky residues that might hold it in place and make it more rigid. 
+
+![Flexibility](/images/flexibility.png)
+
+The maximum probability of the SASA predictions of the residues with high B-factors are much lower than the residues with low B-factors indicating that the model believes there are multiple orientations the residue can be in. 
+
+While this is a promising early result, it is hard to conclude that this means that the model has learned about protein flexibility because there are other variables such as the model’s ability to make better predictions for residues with low solvent exposure. While the model’s confidence of predicting solvent exposure at residue 42 is high, residue 42 is a glycine that immediately follows a proline which might mean that both conformations it takes are highly solvent exposed. Further work must be done to conclude that our model is predicting across multiple conformations or just is inaccurate in regions with high solvent exposure.   
+
+**Future Directions**
+
+As mentioned before, there are definitely model architectures that might be able to improve the model accuracy such as including attention mechanisms or appending language model representation features to our hidden states. Additionally, geometric deep learning could be used to learn directly on protein surfaces (point clouds or other graph representations) which might learn interesting features that contribute to protein function. One of the drawbacks of the model architecture chosen is that it is not very interpretable. Interpretable models will be essential to learning new features about proteins or the physical rules that govern folding and activity. For example, a more interpretable model could be more rigorously analyzed to see if the model is learning about flexibility or not. 
+
+In principle, this model could also be used for de novo antibody design. If you know what your binding interface looks like, you could in principle fix the solvent exposures of those residues and then search for scaffolds that were likely to stabilize that binding interface. The model could also be used as a feature extractor and be finetuned on experimental data to search the experimental fitness landscape. I did not explore these ideas because I do not have access to a lab to validate any predictions but would be happy to set it up if anyone is interested. 
+
+Deep learning is becoming an increasingly powerful tool in the world of structural biology. As we look past the structure prediction problem to the protein design problem, methods that capture features about protein surfaces will be very important to understanding protein and ligand binding pockets, solubility and aggregation which have been difficult to predict with the current methods. 
+
+**Acknowledgements**
+
+Many ideas in this work were influenced by Ruffolo et al. (2020) in Bioinformatics. Thanks to Venkat Munukutla for reading earlier versions of this.
+
+
+
