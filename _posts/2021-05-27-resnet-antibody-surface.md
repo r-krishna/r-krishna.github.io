@@ -51,7 +51,7 @@ The model had a 0.45 weighted average precision on the RosettaAntibody benchmark
 	<p align="center">
 		<img src="/images/test_confusion.png">
 	</p>
-	<figcaption style="text-align:center">Confusion matrix for the model on the test set</caption>
+	<figcaption style="text-align:center">Confusion matrix for the model on the test set</figcaption>
 </figure>
 
 Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface areas trained a separate Random Forest Regressor on each residue position in the Fv with handcrafted features. While this approach was accurate, it requires training over 200 models and cannot handle sequences with variable CDR lengths if similar sets are not found in the training set. 
