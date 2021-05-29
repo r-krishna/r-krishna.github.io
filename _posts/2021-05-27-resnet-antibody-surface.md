@@ -3,13 +3,13 @@ layout: post
 title: "Are ResNets Antibody Surface Learners?"
 date: 2021-05-27
 ---
-*TLDR: I trained a neural network to predict how much area of each amino acid in an antibody structure is ont he surface. The predictor worked really well for amino acids that were not contributing to the surface but was not as good for highly surface exposed amino acids. This model has future applications in antibody design and engineering.*
+*TLDR: I trained a neural network to predict how much area of each amino acid in an antibody structure is on the surface. The predictor worked really well for amino acids that had low contributions to the surface but was not as good for highly surface exposed amino acids. This model has future applications in antibody design and engineering.*
 
 **Introduction**
 
 Antibodies are Y-shaped proteins that humans use as a part of the adaptive immune system. Antibodies can identify new foreign invaders in humans and neutralize them with very high specificity. These properties attracted drug hunters and antibodies are currently one of the fastest growing category of medicines with 100 antibody drugs approved by the FDA. Despite all of these successes, the discovery and engineering of therapeutic antibodies rely on many unscalable practices such as immunizing animals with antigens and “guess and check” methods to optimize sequences. Given the prevalence of antibody structural data, computational approaches such as deep learning are promising methods to improve the antibody discovery and engineering process.
 
-Deep learning has recently catalyzed many breakthrough successes in the world of protein structures, replacing physics based models. Until recently, the protein structure prediction world adopted many approaches from the image processing world such as the use of convolutional neural networks and more specifically ResNet architectures (AlphaFold1, Raptor-X, trRosetta). More recently, attention based mechanisms have been used both on unsupervised tasks (TAPE, UniRep etc.) on protein sequences and supervised tasks on protein structures (AlphaFold2).
+Deep learning has recently catalyzed many breakthrough successes in the world of protein structures, replacing physics based models. Until recently, the protein structure prediction world adopted many approaches from the image processing world such as the use of convolutional neural networks and more specifically ResNet architectures (AlphaFold1, Raptor-X, trRosetta). More recently, attention based mechanisms from natural language processing have been used both on unsupervised tasks (TAPE, UniRep etc.) on protein sequences and supervised tasks on protein structures (AlphaFold2).
 
 These advances are extremely exciting but when we want to design new antibody therapeutics we care more about the properties of the molecule than its structure. For example, a good medicine should bind its disease target while also being soluble and not toxic. When considering these secondary characteristics, the physical and chemical properties of amino acids on the surface of the protein are extremely important because they control interactions with other molecules. Currently, these are calculated by bioinformatic pipelines that look for the most similar solved structure and then adapt that structure to make a model called a homology model. This process is time consuming with each sequence taking on the order of minutes to make a model. 
 
@@ -35,11 +35,12 @@ All structures with a paired VH/VL domain with at most 99% sequence similarity a
 
 The model was trained for 30 epochs with a batch size of 4 and the epoch where the training and validation loss were closest was chosen for evaluation. The Adam optimizer was used with an initial learning rate of 0.01 and reduced when the model was plateuing. The outputs were normalized with the Softmax function and the bucket with the highest probability was chosen as the model prediction when evaluating the model against the experimental structures. 
 
-<p align="center">
-<img src="/images/train_loss.png">
-</p>
-
-<caption style="text-align:center">Training and validation loss during each training epoch</caption>
+<figure>
+	<p align="center">
+		<img src="/images/train_loss.png">
+	</p>
+	<figcaption style="text-align:center">Training and validation loss during each training epoch</figcaption>
+</figure>
 
 This model was trained with vanilla pytorch on my personal AWS instance on a NVIDIA k80 GPU in about 17 minutes. Inference was also performed on the same machine. I have since migrated to using pytorch lightning for my training to avoid pytorch version and hardware dependency issues. 
 
