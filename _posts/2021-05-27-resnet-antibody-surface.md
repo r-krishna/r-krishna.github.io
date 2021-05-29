@@ -17,14 +17,14 @@ Antibodies have a special structure that is slightly different from the use case
 Here, I’m going to describe a small project I did last year that uses a ResNet architecture to predict the solvent exposed surface area (SASA) of each amino acid in a Fv. This approach would be much quicker than building a full homology model and thus allow you to test more potential sequences to find the optimal sequences to test in lab. This has applications in both antibody optimization and could potentially be used in conjunction with other tools to design antibody sequences from scratch on a computer. 
 
 ![Antibody Surface](/images/5d71_surface.png)
-Format: ![Alt Text](url)
+
+Image of an antibody Fv surface. We want to predict how much surface area each residue contributes to the entire surface.
 
 **Model Architecture**
 
 The problem was conceptualized as a classification problem where every amino acid was to be bucketed into one of 25 buckets of normalized SASA values increasing linearly from 0 to 1. The model has 25 1D ResNet blocks with a dropout layer (p=0.2) and a 1d convolutional layer to create the output logits. 
 
-![Antibody Surface](/images/model_architecture.png)
-Format: ![Alt Text](url)
+![Model Architecture](/images/model_architecture.png)
 
 **Dataset**
 
@@ -34,11 +34,12 @@ All structures with a paired VH/VL domain with at most 99% sequence similarity a
 
 The model was trained for 30 epochs with a batch size of 4 and the epoch where the training and validation loss were closest was chosen for evaluation. The Adam optimizer was used with an initial learning rate of 0.01 and reduced when the model was plateuing. The outputs were normalized with the Softmax function and the bucket with the highest probability was chosen as the model prediction when evaluating the model against the experimental structures. 
 
-![Antibody Surface](/images/train_loss.png)
-Format: ![Alt Text](url)
+![Train Loss](/images/train_loss.png)
 
 This model was trained with vanilla pytorch on my personal AWS instance on a NVIDIA k80 GPU in about 17 minutes. Inference was also performed on the same machine. I have since migrated to using pytorch lightning for my training to avoid pytorch version and hardware dependency issues. 
 
 **Overall Model Performance**
 The model had a 0.45 weighted average precision on the RosettaAntibody benchmark set. The model had significantly higher predictive power on buried positions than exposed positions. 
+
+![Test Confusion](/images/test_confusion.png)
 
