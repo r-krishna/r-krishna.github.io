@@ -29,7 +29,7 @@ The problem was conceptualized as a classification problem where every amino aci
 
 **Dataset**
 
-All structures with a paired VH/VL domain with at most 99% sequence similarity and resolution above 3 Angstroms were selected for dataset. The sequences were truncated to only include the variable region that is known to bind antigens. The sequences in the RosettaAntibody benchmark were removed from the training dataset and used as a test set. Of the remaining structures, 95% of the structures were used as a training set and the remaining set was the validation set. The validation set was never seen during training. The input sequences were one hot encoded with an additional feature indicating where the heavy chain ends and the light chain begins. The SASA values were calculated using the freeSASA python package which used the Shrake-Rupley algorithm which rolls a “ball” over the surface of the structure to find the surface area of each residue that is in contact with the external solvent. The values were normalized to the maximum residue solvent exposure (defined as the exposure of Ala-Xxx-Ala peptide). Any values that were above 1 were set to 1 to prevent the model from learning features about outliers. 
+All structures with a paired VH/VL domain with at most 99% sequence similarity and resolution under 3 Angstroms were selected for dataset. The sequences were truncated to only include the variable region that is known to bind antigens. The sequences in the RosettaAntibody benchmark were removed from the training dataset and used as a test set. Of the remaining structures, 95% of the structures were used as a training set and the remaining set was the validation set. The validation set was never seen during training. The input sequences were one hot encoded with an additional feature indicating where the heavy chain ends and the light chain begins. The SASA values were calculated using the freeSASA python package which used the Shrake-Rupley algorithm which rolls a “ball” over the surface of the structure to find the surface area of each residue that is in contact with the external solvent. The values were normalized to the maximum residue solvent exposure (defined as the exposure of Ala-Xxx-Ala peptide). Any values that were above 1 were set to 1 to prevent the model from learning features about outliers. 
 
 **Model Training**
 
@@ -45,6 +45,7 @@ The model was trained for 30 epochs with a batch size of 4 and the epoch where t
 This model was trained with vanilla pytorch on my personal AWS instance on a NVIDIA k80 GPU in about 17 minutes. Inference was also performed on the same machine. I have since migrated to using pytorch lightning for my training to avoid pytorch version and hardware dependency issues. 
 
 **Overall Model Performance**
+
 The model had a 0.45 weighted average precision on the RosettaAntibody benchmark set. The model had significantly higher predictive power on buried positions than exposed positions. 
 
 <figure>
@@ -54,7 +55,7 @@ The model had a 0.45 weighted average precision on the RosettaAntibody benchmark
 	<figcaption style="text-align:center">Confusion matrix for the model on the test set</figcaption>
 </figure>
 
-Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface areas trained a separate Random Forest Regressor on each residue position in the Fv with handcrafted features. While this approach was accurate, it requires training over 200 models and cannot handle sequences with variable CDR lengths if similar sets are not found in the training set. 
+Previous work (Jain et al. (2017) Bioinformatics) on predicting antibody surface areas trained a separate Random Forest Regressor on each residue position in the Fv with handcrafted features. While this approach was accurate, it requires training over 200 models and cannot handle sequences with variable CDR lengths if similar lengths are not found in the training set. 
 
 **Model Performance on CDR regions**
 
