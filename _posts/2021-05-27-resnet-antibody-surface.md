@@ -23,7 +23,7 @@ Here, I’m going to describe a small project I did last year that uses a ResNet
 
 **Model Architecture**
 
-The problem was conceptualized as a classification problem where every amino acid was to be bucketed into one of 25 buckets of normalized SASA values increasing linearly from 0 to 1. The model has 25 1D ResNet blocks with a dropout layer (p=0.2) and a 1d convolutional layer to create the output logits. 
+The problem was conceptualized as a classification problem where every amino acid was to be bucketed into one of 25 buckets of normalized SASA values increasing linearly from 0 to 1. The model has 21 1D ResNet blocks with a dropout layer (p=0.2) and a 1d convolutional layer to create the output logits. 
 
 ![Model Architecture](/images/model_architecture.png)
 
