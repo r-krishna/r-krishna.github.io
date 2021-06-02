@@ -74,7 +74,18 @@ As expected the predictions for the CDRH3 are much worse than the predictions fo
 
 One reason our predictions might be weaker at high solvent exposure is highly solvent exposed residues tend to be more flexible because they have more ability to move around when contacting solvents or other molecules. I hypothesized that the reduction of accuracy for highly solvent exposed residues might actually be taking into account alternative conformations that the protein could take and predicting the protein flexibility as model uncertainty. To test this hypothesis, I looked at the crystallographic B-factors for a structure in our test set which represent how difficult it was to resolve the atoms in the residue. A high B-factor indicates higher flexibility while a lower B-factor indicates less flexibility. This is not a perfect measure of protein flexibility but has been used to identify flexible residues before.
 
-I chose a case study protein (PDB ID: 1MFA) where the CDRH3 had low B-factors and a region in the framework had high B-factors to see if the distribution of predicted solvent areas encoded anything about the flexibility of those residues. Since the model performed worse on the CDRH3 region and better on framework regions in general, this will hopefully eliminate the possibility that the distribution of probabilities was due to the model being confused versus it actually learning something about the system. 
+Pseudo-log-likelihood (PLL) is a measure of the joint probability distribution of a collection of random variables. In this case, I used it as a measure of how confident the model is on it's predictions. Our model is trained with cross entropy loss which tries to maximize the probability of the correct label and the PLL measures the sum of the log probabilities of all the classes. 
+
+<figure>
+	<p align="center">
+		<img src="/images/pll_flexibility.png">
+	</p>
+	<figcaption style="text-align:center">Scatter plot of the pseudo-log-likelihood of each residue prediction compared to the b-factors</figcaption>
+</figure>
+
+The PLL values seem to broadly indicate that the model had high confidence on many of the rigid positions but seemed to also be confident on some of the more flexible residues. This corresponds with my previous result that the model has better predictive power on buried residues that are probably more rigid than highly exposed residues. 
+
+To investigate closer, I chose a case study protein from the test set (PDB ID: 1MFA) where the CDRH3 had low B-factors and a region in the framework had high B-factors to see if the distribution of predicted solvent areas encoded anything about the flexibility of those residues. Since the model performed worse on the CDRH3 region and better on framework regions in general, this will hopefully eliminate the possibility that the distribution of probabilities was due to the model being confused versus it actually learning something about the system. 
 
 ![1MFA structure](/images/1mfa_structure.png)
 
