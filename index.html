@@ -17,6 +17,13 @@ title: Rohith Krishna
 				<video class="center" controls="controls" width="800" height="600" name="tcsD">
 					<source src="images/tcsD.mov">
 				</video>
+			<ul class="posts">
+
+			{% for post in site.posts %}
+				<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+			{% endfor %}
+				
+			</ul>
 
 				<br>
 				Check out my <a href="/blog">blog</a> to check out some side projects I've built or am interested in. Feel free to reach out if you want to talk!
