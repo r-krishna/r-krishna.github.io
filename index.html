@@ -4,13 +4,13 @@ title: Rohith Krishna
 ---
 
 <!-- Hero Section -->
-<section class="section bg-gradient-to-br from-primary-50 to-accent-50">
+<section class="section bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-800 dark:to-gray-900">
   <div class="container-custom">
     <div class="max-w-4xl">
-      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
         Hi, I'm <span class="text-gradient">Rohith Krishna</span>
       </h1>
-      <p class="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
+      <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
         Ph.D. student at the University of Washington, working with David Baker on developing AI/ML algorithms for molecular design.
       </p>
       <div class="flex flex-wrap gap-4">
@@ -26,15 +26,15 @@ title: Rohith Krishna
 </section>
 
 <!-- About Section -->
-<section class="section bg-white">
+<section class="section bg-white dark:bg-gray-900">
   <div class="container-custom">
     <div class="max-w-4xl">
-      <h2 class="text-3xl font-bold text-gray-900 mb-6">Background</h2>
-      <p class="text-lg text-gray-700 mb-4">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Background</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
         Previously, I was a scientific software engineer at Denali Therapeutics and obtained a BS/BA in Chemistry and Computer Science at UC Berkeley.
       </p>
 
-      <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Research Interests</h3>
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Research Interests</h3>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="card p-6">
           <div class="flex items-start">
@@ -44,8 +44,8 @@ title: Rohith Krishna
               </svg>
             </div>
             <div class="ml-4">
-              <h4 class="text-lg font-semibold text-gray-900 mb-2">Molecular Design</h4>
-              <p class="text-gray-600">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Molecular Design</h4>
+              <p class="text-gray-600 dark:text-gray-400">
                 Biomolecule structure modeling, protein design, protein property optimization, therapeutic development
               </p>
             </div>
@@ -55,13 +55,13 @@ title: Rohith Krishna
         <div class="card p-6">
           <div class="flex items-start">
             <div class="flex-shrink-0">
-              <svg class="h-6 w-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
             <div class="ml-4">
-              <h4 class="text-lg font-semibold text-gray-900 mb-2">Geometric Deep Learning</h4>
-              <p class="text-gray-600">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Geometric Deep Learning</h4>
+              <p class="text-gray-600 dark:text-gray-400">
                 Geometric deep learning, equivariance, finding symmetries in molecular systems
               </p>
             </div>
@@ -73,12 +73,12 @@ title: Rohith Krishna
 </section>
 
 <!-- Recent Posts Section -->
-<section class="section bg-gray-50">
+<section class="section bg-gray-50 dark:bg-gray-800">
   <div class="container-custom">
     <div class="max-w-4xl">
       <div class="flex items-center justify-between mb-8">
-        <h2 class="text-3xl font-bold text-gray-900">Recent Posts</h2>
-        <a href="/blog" class="text-primary-600 hover:text-primary-700 font-medium">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Recent Posts</h2>
+        <a href="/blog" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium">
           View all →
         </a>
       </div>
@@ -87,17 +87,17 @@ title: Rohith Krishna
         {% for post in site.posts limit:3 %}
         <article class="card p-6 hover:shadow-xl transition-shadow">
           <div class="flex items-center justify-between mb-2">
-            <time class="text-sm text-gray-500">{{ post.date | date_to_string }}</time>
+            <time class="text-sm text-gray-500 dark:text-gray-400">{{ post.date | date_to_string }}</time>
           </div>
           <h3 class="text-xl font-semibold mb-2">
-            <a href="{{ post.url }}" class="text-gray-900 hover:text-primary-600 transition-colors">
+            <a href="{{ post.url }}" class="text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
               {{ post.title }}
             </a>
           </h3>
           {% if post.excerpt %}
-          <p class="text-gray-600">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          <p class="text-gray-600 dark:text-gray-400">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
           {% endif %}
-          <a href="{{ post.url }}" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium mt-4">
+          <a href="{{ post.url }}" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium mt-4">
             Read more →
           </a>
         </article>
