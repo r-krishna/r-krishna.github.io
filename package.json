@@ -1,0 +1,21 @@
+{
+  "name": "r-krishna-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio and research website",
+  "scripts": {
+    "dev": "concurrently \"npm run watch:css\" \"npm run serve:jekyll\"",
+    "dev:css-only": "npm run watch:css",
+    "serve:jekyll": "bundle exec jekyll serve",
+    "watch:css": "tailwindcss -i ./_src/input.css -o ./css/main.css --watch",
+    "build:css": "tailwindcss -i ./_src/input.css -o ./css/main.css --minify",
+    "build": "npm run build:css && bundle exec jekyll build"
+  },
+  "keywords": ["jekyll", "portfolio", "research"],
+  "author": "Rohith Krishna",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "concurrently": "^8.2.2",
+    "@tailwindcss/typography": "^0.5.10"
+  }
+}

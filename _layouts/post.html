@@ -1,9 +1,40 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }}</p>
 
-<div class="post">
-  {{ content }}
-</div>
+<article class="section">
+  <div class="container-custom">
+    <div class="max-w-3xl mx-auto">
+      <!-- Post Header -->
+      <header class="mb-8 pb-8 border-b border-gray-200">
+        <a href="/blog" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium mb-4">
+          <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Blog
+        </a>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{{ page.title }}</h1>
+        <div class="flex items-center text-gray-600">
+          <time class="text-sm font-medium">{{ page.date | date: "%B %d, %Y" }}</time>
+        </div>
+      </header>
+
+      <!-- Post Content -->
+      <div class="prose prose-lg max-w-none">
+        {{ content }}
+      </div>
+
+      <!-- Post Footer -->
+      <footer class="mt-12 pt-8 border-t border-gray-200">
+        <div class="flex items-center justify-between">
+          <a href="/blog" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to all posts
+          </a>
+        </div>
+      </footer>
+    </div>
+  </div>
+</article>
