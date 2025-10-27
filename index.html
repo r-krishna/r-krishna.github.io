@@ -62,47 +62,120 @@ title: Rohith Krishna
   </div>
 </section>
 
-<!-- About Section -->
+<!-- Track Record Section -->
 <section class="section bg-white dark:bg-gray-900">
   <div class="container-custom">
-    <div class="max-w-4xl">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Background</h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
-        Previously, I was a scientific software engineer at Denali Therapeutics and obtained a BS/BA in Chemistry and Computer Science at UC Berkeley.
-      </p>
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">Track Record</h2>
 
-      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Research Interests</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="card p-6">
-          <div class="flex items-start">
-            <div class="flex-shrink-0">
-              <svg class="h-6 w-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1: Foundational Models -->
+        <div class="card p-8">
+          <div class="flex justify-center mb-6">
+            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
               </svg>
             </div>
-            <div class="ml-4">
-              <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Molecular Design</h4>
-              <p class="text-gray-600 dark:text-gray-400">
-                Biomolecule structure modeling, protein design, protein property optimization, therapeutic development
-              </p>
+          </div>
+
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">Foundational Models</h3>
+
+          <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+            Led development of three foundational models that enable AI-powered molecular design:
+          </p>
+
+          <ul class="space-y-3 mb-6 text-sm text-gray-700 dark:text-gray-300">
+            <li class="flex items-start">
+              <span class="text-primary-600 dark:text-primary-400 mr-2">•</span>
+              <span><strong>RoseTTAFold All-Atom</strong> (Science, 2024) - First all-atom molecular modeling network</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-600 dark:text-primary-400 mr-2">•</span>
+              <span><strong>RFdiffusion2</strong> - Extended to enzyme design applications</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary-600 dark:text-primary-400 mr-2">•</span>
+              <span><strong>RFdiffusion3</strong> (Preprint) - Generalized back to all molecular design tasks</span>
+            </li>
+          </ul>
+
+          <div class="space-y-2 text-sm border-t border-gray-200 dark:border-gray-700 pt-4">
+            <div class="flex items-center justify-between text-gray-600 dark:text-gray-400">
+              <span class="flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span id="github-stars">1.5K+</span> GitHub stars
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-gray-600 dark:text-gray-400">
+              <span class="flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                </svg>
+                500+ citations
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-gray-600 dark:text-gray-400">
+              <span class="flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/>
+                </svg>
+                Adopted globally
+              </span>
             </div>
           </div>
         </div>
 
-        <div class="card p-6">
-          <div class="flex items-start">
-            <div class="flex-shrink-0">
-              <svg class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        <!-- Card 2: Industry Experience -->
+        <div class="card p-8">
+          <div class="flex justify-center mb-6">
+            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
-            <div class="ml-4">
-              <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Geometric Deep Learning</h4>
-              <p class="text-gray-600 dark:text-gray-400">
-                Geometric deep learning, equivariance, finding symmetries in molecular systems
-              </p>
+          </div>
+
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">Industry Experience</h3>
+
+          <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+            Developed ML infrastructure and analysis tools for therapeutic discovery at Denali Therapeutics over 2 years.
+          </p>
+
+          <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+            Worked directly on drug development programs, processing millions of sequences and generating predictions for cross-functional teams.
+          </p>
+
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Understand the practical challenges of commercial biotech.
+          </p>
+        </div>
+
+        <!-- Card 3: Full-Stack Capabilities -->
+        <div class="card p-8">
+          <div class="flex justify-center mb-6">
+            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
             </div>
           </div>
+
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">Full-Stack Capabilities</h3>
+
+          <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+            Build complete ML systems for molecular design: from model architecture and training infrastructure to experimental validation and real-world deployment.
+          </p>
+
+          <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+            Expertise spans atomic-level interactions to pathway-level organization, enabling comprehensive biological modeling.
+          </p>
+
+          <p class="text-gray-700 dark:text-gray-300 font-semibold">
+            Academic rigor + industry pragmatism
+          </p>
         </div>
       </div>
     </div>
