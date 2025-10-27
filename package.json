@@ -10,12 +10,16 @@
     "build:css": "tailwindcss -i ./_src/input.css -o ./css/main.css --minify",
     "build": "npm run build:css && bundle exec jekyll build"
   },
-  "keywords": ["jekyll", "portfolio", "research"],
+  "keywords": [
+    "jekyll",
+    "portfolio",
+    "research"
+  ],
   "author": "Rohith Krishna",
   "license": "MIT",
   "devDependencies": {
-    "tailwindcss": "^3.4.1",
+    "@tailwindcss/typography": "^0.5.10",
     "concurrently": "^8.2.2",
-    "@tailwindcss/typography": "^0.5.10"
+    "tailwindcss": "^3.4.1"
   }
 }

@@ -6,20 +6,120 @@ title: Rohith Krishna
 <!-- Hero Section -->
 <section class="section bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-800 dark:to-gray-900">
   <div class="container-custom">
-    <div class="max-w-4xl">
-      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-        Hi, I'm <span class="text-gradient">Rohith Krishna</span>
-      </h1>
-      <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-        Ph.D. student at the University of Washington, working with David Baker on developing AI/ML algorithms for molecular design.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="/research" class="btn btn-primary">
-          View Research
-        </a>
-        <a href="/publications" class="btn btn-secondary">
-          Publications
-        </a>
+    <div class="max-w-6xl mx-auto">
+      <!-- Credential Badge -->
+      <div class="mb-6">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+          </svg>
+          PhD, University of Washington • Baker Lab
+        </div>
+      </div>
+
+      <!-- Main Content: Photo + Text -->
+      <div class="grid md:grid-cols-[300px,1fr] gap-8 md:gap-12 items-start mb-12">
+        <!-- Photo -->
+        <div class="mx-auto md:mx-0">
+          <img src="/images/headshot.png" alt="Rohith Krishna" class="w-64 h-64 md:w-72 md:h-72 rounded-2xl object-cover shadow-xl ring-4 ring-white dark:ring-gray-700">
+        </div>
+
+        <!-- Text Content -->
+        <div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            Translating AI research into <span class="text-gradient">real-world molecular innovation</span>
+          </h1>
+
+          <div class="space-y-4 text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+            <p>
+              <strong class="text-gray-900 dark:text-white">Rohith Krishna, PhD</strong><br>
+              <span class="text-gray-600 dark:text-gray-400">Computational Biology & Machine Learning</span>
+            </p>
+            <p>
+              I build models of biology—from atomic coordinates that form molecular interactions, up to the organization of pathways in cells. These models have been used across the world in both industry and academia.
+            </p>
+            <p class="text-base text-gray-600 dark:text-gray-400">
+              Previously: Baker Lab (UW) • Denali Therapeutics • UC Berkeley
+            </p>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4">
+            <a href="/research" class="btn btn-primary text-base md:text-lg px-6 py-3">
+              What I'm Building
+            </a>
+            <a href="/publications" class="btn btn-secondary text-base md:text-lg px-6 py-3">
+              Publications
+            </a>
+            <a href="mailto:krishna.rohith@gmail.com" class="btn btn-secondary text-base md:text-lg px-6 py-3">
+              Let's Talk
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Research Highlight -->
+      <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 border-2 border-primary-200 dark:border-primary-800 shadow-lg">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">RoseTTAFold All-Atom</h3>
+              <span class="inline-flex items-center px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full text-xs font-semibold">
+                Science Cover
+              </span>
+            </div>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              First neural network for joint protein-small molecule modeling at atomic resolution
+            </p>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                </svg>
+                Science, 2024
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                </svg>
+                100+ citations
+              </div>
+              <a href="#" class="flex items-center gap-1 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium">
+                Read paper
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 text-center border border-gray-200 dark:border-gray-700">
+          <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">10+</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Publications</div>
+        </div>
+        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 text-center border border-gray-200 dark:border-gray-700">
+          <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">500+</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Citations</div>
+        </div>
+        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 text-center border border-gray-200 dark:border-gray-700">
+          <div class="text-3xl font-bold text-primary-600 dark:text-primary-400">5+</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Years Research</div>
+        </div>
+        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 text-center border border-gray-200 dark:border-gray-700">
+          <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">PhD</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Completed 2024</div>
+        </div>
       </div>
     </div>
   </div>
