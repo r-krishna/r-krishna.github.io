@@ -9,6 +9,16 @@
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
 
+  <!-- Dark mode toggle button -->
+  <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors z-50" style="position: fixed; top: 2rem; right: 2rem;" aria-label="Toggle dark mode">
+    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+    </svg>
+    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+    </svg>
+  </button>
+
   <!-- Main container with sidebar -->
   <div class="flex max-w-6xl mx-auto" style="padding-top: 60px;">
     <!-- Left Sidebar Navigation -->
@@ -30,8 +40,8 @@
   <section id="about" class="pb-6">
     <div class="flex flex-col md:flex-row gap-8 mb-12">
       <!-- Photo -->
-      <div class="flex-shrink-0">
-        <img src="/images/headshot.png" alt="Rohith Krishna" class="w-48 h-48 rounded-2xl object-cover mb-4">
+      <div class="flex-shrink-0 flex flex-col items-center">
+        <img src="/images/headshot.png" alt="Rohith Krishna" class="w-56 h-56 rounded-2xl object-cover mb-4">
 
         <!-- Contact Links -->
         <div class="flex gap-4 text-gray-600 dark:text-gray-400">
@@ -61,6 +71,8 @@
             </svg>
           </a>
         </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400 text-center mt-3">krishna.rohith@gmail.com</p>
+        <a href="https://join.slack.com/t/proteinmodelfoundry/shared_invite/zt-3kpwru8c6-nrmTW6LNHnSE7h16GNnfLA" target="_blank" style="color: #0066cc;" class="text-sm hover:underline text-center mt-2 block">Join our protein design Slack community</a>
       </div>
 
       <!-- Bio -->
@@ -93,7 +105,13 @@
   <section id="updates" class="pt-8 pb-12 border-t border-gray-200 dark:border-gray-700">
     <h2 class="text-lg font-bold mb-6">Updates</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+    <div style="columns: 1; column-gap: 3rem;">
+      <style>
+        @media (min-width: 768px) {
+          #updates > div { columns: 2; }
+        }
+        #updates > div > div { break-inside: avoid; margin-bottom: 1rem; }
+      </style>
       <!-- Update items - add your actual updates here -->
       <div class="flex gap-4">
         <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Dec 2025</div>
@@ -206,6 +224,10 @@
 
       <a href="https://www.biorxiv.org/content/10.1101/2025.09.18.676967v2" target="_blank" class="block border border-gray-200 dark:border-gray-700 rounded overflow-hidden hover:shadow-lg transition-shadow">
         <img src="/assets/papers/rfdiffusion3.png" alt="RFdiffusion3" class="w-full h-auto object-cover aspect-[8.5/11]">
+      </a>
+
+      <a href="https://www.biorxiv.org/content/10.1101/2025.08.14.670328v2" target="_blank" class="block border border-gray-200 dark:border-gray-700 rounded overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="/assets/papers/rf3.png" alt="RF3" class="w-full h-auto object-cover aspect-[8.5/11]">
       </a>
 
       <!-- Add more paper thumbnails -->
@@ -325,15 +347,36 @@
 
   <!-- Dark mode toggle script -->
   <script>
-    // Simple dark mode toggle (optional - remove if not needed)
     const html = document.documentElement;
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Get current theme from localStorage or default to light
     const currentTheme = localStorage.getItem('theme') || 'light';
 
+    // Set initial theme
     if (currentTheme === 'dark') {
       html.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
     }
 
-    // You can add a toggle button later if needed
+    // Toggle theme on button click
+    themeToggleBtn.addEventListener('click', function() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        themeToggleLightIcon.classList.add('hidden');
+        themeToggleDarkIcon.classList.remove('hidden');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggleDarkIcon.classList.add('hidden');
+        themeToggleLightIcon.classList.remove('hidden');
+      }
+    });
   </script>
 
 </body>
