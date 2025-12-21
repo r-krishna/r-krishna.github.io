@@ -1,214 +1,340 @@
----
-layout: default
-title: Rohith Krishna
----
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohith Krishna</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
 
-<!-- Hero Section -->
-<section class="section bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-800 dark:to-gray-900">
-  <div class="container-custom">
-    <div class="max-w-6xl mx-auto">
-      <!-- Credential Badge -->
-      <div class="mb-6">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-          </svg>
-          PhD, University of Washington • Baker Lab
-        </div>
+  <!-- Main container with sidebar -->
+  <div class="flex max-w-6xl mx-auto" style="padding-top: 60px;">
+    <!-- Left Sidebar Navigation -->
+    <nav class="hidden md:block w-48 flex-shrink-0 px-6" style="position: sticky; top: 60px; align-self: flex-start; height: fit-content;">
+      <h1 class="text-lg font-bold mb-6 text-gray-900 dark:text-white">Rohith Krishna</h1>
+      <div class="space-y-4 text-sm">
+        <a href="#about" class="block text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">About</a>
+        <a href="#updates" class="block text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Updates</a>
+        <a href="#manuscripts" class="block text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Selected Manuscripts</a>
+        <a href="#blog" class="block text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Blog</a>
+        <a href="#videos" class="block text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Videos</a>
       </div>
+    </nav>
 
-      <!-- Main Content: Photo + Text -->
-      <div class="grid grid-cols-1 md:grid-cols-[280px,1fr] gap-8 md:gap-12 items-start mb-12">
-        <!-- Photo -->
-        <div class="mx-auto md:mx-0">
-          <img src="/images/headshot.png" alt="Rohith Krishna" class="w-64 h-64 rounded-2xl object-cover shadow-xl ring-4 ring-white dark:ring-gray-700">
-        </div>
+    <!-- Main Content -->
+    <main class="flex-1 px-6">
 
-        <!-- Text Content -->
-        <div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            Translating AI research into <span class="text-gradient">real-world molecular innovation</span>
-          </h1>
+  <!-- Header / Summary Section -->
+  <section id="about" class="pb-12">
+    <div class="flex flex-col md:flex-row gap-8 mb-12">
+      <!-- Photo -->
+      <div class="flex-shrink-0">
+        <img src="/images/headshot.png" alt="Rohith Krishna" class="w-40 h-40 rounded-2xl object-cover mb-4">
 
-          <div class="space-y-4 text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-            <p>
-              <strong class="text-gray-900 dark:text-white">Rohith Krishna, PhD</strong><br>
-              <span class="text-gray-600 dark:text-gray-400">Computational Biology & Machine Learning</span>
-            </p>
-            <p>
-              I build models of biology—from atomic coordinates that form molecular interactions, up to the organization of pathways in cells. These models have been used across the world in both industry and academia.
-            </p>
-            <p class="text-base text-gray-600 dark:text-gray-400">
-              Previously: Baker Lab (UW) • Denali Therapeutics • UC Berkeley
-            </p>
-          </div>
-
-          <!-- CTAs -->
-          <div class="flex flex-wrap gap-4">
-            <a href="/research" class="btn btn-primary text-base md:text-lg px-6 py-3">
-              What I'm Building
-            </a>
-            <a href="https://scholar.google.com/citations?user=g1nRZnwAAAAJ&hl=en" class="btn btn-secondary text-base md:text-lg px-6 py-3" target="_blank" rel="noopener noreferrer">
-              Publications
-            </a>
-            <a href="mailto:krishna.rohith@gmail.com" class="btn btn-secondary text-base md:text-lg px-6 py-3">
-              Let's Talk
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Track Record Section -->
-<section class="section bg-white dark:bg-gray-900">
-  <div class="container-custom">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">Track Record</h2>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1: Foundational Models -->
-        <div class="card p-8">
-          <div class="flex justify-center mb-6">
-            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
-              <svg class="w-8 h-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-              </svg>
-            </div>
-          </div>
-
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">Foundational Models</h3>
-
-          <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-            Led development of three foundational models that enable AI-powered molecular design:
-          </p>
-
-          <ul class="space-y-3 mb-6 text-sm text-gray-700 dark:text-gray-300">
-            <li class="flex items-start">
-              <span class="text-primary-600 dark:text-primary-400 mr-2">•</span>
-              <span><strong>RoseTTAFold All-Atom</strong> (Science, 2024) - First all-atom molecular modeling network</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary-600 dark:text-primary-400 mr-2">•</span>
-              <span><strong>RFdiffusion2</strong> - Extended to enzyme design applications</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary-600 dark:text-primary-400 mr-2">•</span>
-              <span><strong>RFdiffusion3</strong> (Preprint) - Generalized back to all molecular design tasks</span>
-            </li>
-          </ul>
-
-          <div class="space-y-2 text-sm border-t border-gray-200 dark:border-gray-700 pt-4">
-            <div class="flex items-center justify-between text-gray-600 dark:text-gray-400">
-              <span class="flex items-center">
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <span id="github-stars">1.5K+</span> GitHub stars
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-gray-600 dark:text-gray-400">
-              <span class="flex items-center">
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
-                </svg>
-                1,000+ citations
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-gray-600 dark:text-gray-400">
-              <span class="flex items-center">
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/>
-                </svg>
-                Adopted globally
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2: Industry Experience -->
-        <div class="card p-8">
-          <div class="flex justify-center mb-6">
-            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
-              <svg class="w-8 h-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-            </div>
-          </div>
-
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">Industry Experience</h3>
-
-          <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-            Developed ML infrastructure and analysis tools for therapeutic discovery at Denali Therapeutics over 2 years.
-          </p>
-
-          <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-            Worked directly on drug development programs, processing millions of sequences and generating predictions for cross-functional teams.
-          </p>
-
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Understand the practical challenges of commercial biotech.
-          </p>
-        </div>
-
-        <!-- Card 3: Full-Stack Capabilities -->
-        <div class="card p-8">
-          <div class="flex justify-center mb-6">
-            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center">
-              <svg class="w-8 h-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-              </svg>
-            </div>
-          </div>
-
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">Full-Stack Capabilities</h3>
-
-          <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-            Build complete ML systems for molecular design: from model architecture and training infrastructure to experimental validation and real-world deployment.
-          </p>
-
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Expertise spans developing custom PyTorch model code to experimental biochemistry.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Recent Posts Section -->
-<section class="section bg-gray-50 dark:bg-gray-800">
-  <div class="container-custom">
-    <div class="max-w-4xl">
-      <div class="flex items-center justify-between mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Recent Posts</h2>
-        <a href="/blog" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium">
-          View all →
-        </a>
-      </div>
-
-      <div class="space-y-6">
-        {% for post in site.posts limit:3 %}
-        <article class="card p-6 hover:shadow-xl transition-shadow">
-          <div class="flex items-center justify-between mb-2">
-            <time class="text-sm text-gray-500 dark:text-gray-400">{{ post.date | date_to_string }}</time>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="{{ post.url }}" class="text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-              {{ post.title }}
-            </a>
-          </h3>
-          {% if post.excerpt %}
-          <p class="text-gray-600 dark:text-gray-400">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-          {% endif %}
-          <a href="{{ post.url }}" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium mt-4">
-            Read more →
+        <!-- Contact Links -->
+        <div class="flex gap-4 text-gray-600 dark:text-gray-400">
+          <a href="mailto:krishna.rohith@gmail.com" class="hover:text-gray-900 dark:hover:text-white" title="Email">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
           </a>
-        </article>
-        {% endfor %}
+          <a href="https://scholar.google.com/citations?user=g1nRZnwAAAAJ&hl=en" target="_blank" class="hover:text-gray-900 dark:hover:text-white" title="Google Scholar">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/r-krishna" target="_blank" class="hover:text-gray-900 dark:hover:text-white" title="GitHub">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/r_krishna3" target="_blank" class="hover:text-gray-900 dark:hover:text-white" title="Twitter">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/rohith-krishna/" target="_blank" class="hover:text-gray-900 dark:hover:text-white" title="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="flex-1">
+        <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+          <p>
+            I have spent my whole career doing AI research with applications to the biomedical sciences both at startups and in academia. In my PhD advised by Nobel Laureate David Baker, I initiated efforts to develop AI algorithms to model and design biomolecular interactions resulting in nine publications including a first author Science paper and a co-corresponding author Nature Methods paper.
+          </p>
+          <p>
+            My ultimate goal is to unlock precision N of 1 medicines for any patient in the world.
+          </p>
+          <p>
+            My current research interests are:
+          </p>
+          <p>
+            1. How do we tokenize and create shared representations for several modalities of biological data? We currently have bespoke methods for individual data modalities, but no way to model that concurrently that would be necessary to ask our AIs more complicated questions about cellular and biological behavior.
+          </p>
+          <p>
+            2. How do we create models of biological systems that will enable us to predict specific outcomes for specific patients? This has two parts, we need inputs to the model that uniquely identify the biological state of a patient and then we need to know how to predict the response to a specific treatment.
+          </p>
+          <p>
+            Previously, I was a software engineer at Denali therapeutics and received my BS/BA in Chemical Biology and Computer Science from UC Berkeley.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- Updates / News Section -->
+  <section id="updates" class="py-12 border-t border-gray-200 dark:border-gray-700" style="margin-top: 60px;">
+    <h2 class="text-lg font-bold mb-6">Updates</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12" style="row-gap: 1.5rem;">
+      <!-- Update items - add your actual updates here -->
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Dec 2025</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          RFdiffusion3 <a href="https://github.com/RosettaCommons/foundry" target="_blank" style="color: #0066cc;" class="hover:underline">code</a> is open-source! Here's an <a href="https://www.genengnews.com/topics/artificial-intelligence/rfdiffusion3-now-open-source-designs-dna-binders-and-advanced-enzymes/" target="_blank" style="color: #0066cc;" class="hover:underline">article from Genetic Engineering and Biotechnology News</a> covering the release.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Dec 2025</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          RFdiffusion2 paper published in <a href="https://www.nature.com/articles/s41592-025-02975-x" target="_blank" style="color: #0066cc;" class="hover:underline">Nature Methods</a> and companion application paper published in <a href="https://www.nature.com/articles/s41586-025-09746-w" target="_blank" style="color: #0066cc;" class="hover:underline">Nature</a>. <a href="https://www.geekwire.com/2025/uw-nobel-winners-lab-releases-most-powerful-protein-design-tool-yet/" target="_blank" style="color: #0066cc;" class="hover:underline">Geekwire</a> and <a href="https://www.chemistryworld.com/news/protein-design-takes-big-leap-forward-as-model-produces-enzymes-almost-as-effective-as-natures/4022668.article" target="_blank" style="color: #0066cc;" class="hover:underline">Chemistry World</a> covered the release.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Nov 2025</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          RF3 launched on Microsoft Foundry at the <a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/rosettafold3-model-at-ignite-2025-extending-frontier-of-biomolecular-modeling-in/4470504" target="_blank" style="color: #0066cc;" class="hover:underline">Microsoft Ignite Conference</a>.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Sep 2025</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          RFdiffusion3 <a href="https://www.biorxiv.org/content/10.1101/2025.09.18.676967v2" target="_blank" style="color: #0066cc;" class="hover:underline">preprint</a> released. A new frontier model that is on par of exceeds state-of-the-art on all biomolecular interaction design tasks in a single foundation model.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Aug 2025</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          RF3 <a href="https://github.com/RosettaCommons/foundry" target="_blank" style="color: #0066cc;" class="hover:underline">code</a> and <a href="https://www.biorxiv.org/content/10.1101/2025.08.14.670328v2" target="_blank" style="color: #0066cc;" class="hover:underline">preprint</a> online. The most performant open-source biomolecular modeling software. Also, releasing our internal data processing package, <a href="https://github.com/RosettaCommons/atomworks" target="_blank" style="color: #0066cc;" class="hover:underline">AtomWorks</a>.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Jun 2025</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          Defended my thesis!
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Apr 2025</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          Gave a talk at the University of Cambridge about our latest work on protein design of molecular interactions.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Dec 2024</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          Joined my PhD advisor in Stockholm to celebrate his Nobel Prize.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Dec 2024</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          RF All-Atom recognized as one of the <a href="https://youtu.be/p9XHI_26cPE?t=925" target="_blank" style="color: #0066cc;" class="hover:underline">biggest breakthroughs in biology and neuroscience in 2024</a> by Quanta Magazine.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">May 2024</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          Spoke at the White House about our work in protein design as a part of the kickoff for the National AI Research Resource. <a href="https://www.ipd.uw.edu/2024/05/ipd-to-pilot-nairr-ai-research-resource/" target="_blank" style="color: #0066cc;" class="hover:underline">Click here to see a photo of me in the White House</a>.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Apr 2024</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          RF All-Atom cited in a <a href="https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/04/AI-Report_Upload_29APRIL2024_SEND-2.pdf" target="_blank" style="color: #0066cc;" class="hover:underline">Report to President Joe Biden</a> on Supercharging Research using AI for Global Challenges.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Mar 2024</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          RF All-Atom <a href="https://www.science.org/doi/10.1126/science.adl2528" target="_blank" style="color: #0066cc;" class="hover:underline">paper</a> published on the cover of Science and <a href="https://github.com/baker-laboratory/RoseTTAFold-All-Atom" target="_blank" style="color: #0066cc;" class="hover:underline">code</a> released. <a href="https://endpoints.news/david-bakers-lab-releases-new-ai-tools-for-studying-and-making-proteins/" target="_blank" style="color: #0066cc;" class="hover:underline">Endpoints News</a> covered the release and <a href="https://www.nature.com/articles/s41587-024-02211-5" target="_blank" style="color: #0066cc;" class="hover:underline">Nature Biotechnology</a> wrote a research highlight.
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Oct 2023</div>
+        <div class="text-sm text-gray-700 dark:text-gray-300">
+          RF All-Atom <a href="https://www.biorxiv.org/content/10.1101/2023.10.09.561603v1" target="_blank" style="color: #0066cc;" class="hover:underline">preprint</a> released. <a href="https://techcrunch.com/2023/10/21/this-week-in-ai-can-we-trust-deepmind-to-be-ethical/" target="_blank" style="color: #0066cc;" class="hover:underline">TechCrunch</a> covers it in their This Week in AI article.
+        </div>
+      </div>
+
+      <!-- Add more updates -->
+    </div>
+  </section>
+
+  <!-- Papers / Publications Section -->
+  <section id="manuscripts" class="py-12 border-t border-gray-200 dark:border-gray-700" style="margin-top: 60px;">
+    <h2 class="text-lg font-bold mb-6">Selected Manuscripts</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Publication thumbnail - Add your actual papers here -->
+      <a href="https://www.science.org/doi/10.1126/science.adl2528" target="_blank" class="block border border-gray-200 dark:border-gray-700 rounded overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="/assets/papers/science.2024.384.issue-6693.largecover.jpg" alt="RoseTTAFold All-Atom" class="w-full h-auto object-cover aspect-[8.5/11]">
+      </a>
+
+      <a href="https://www.nature.com/articles/s41592-025-02975-x" target="_blank" class="block border border-gray-200 dark:border-gray-700 rounded overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="/assets/papers/rfdiffusion2.png" alt="RFdiffusion2" class="w-full h-auto object-cover aspect-[8.5/11]">
+      </a>
+
+      <a href="https://www.biorxiv.org/content/10.1101/2025.09.18.676967v2" target="_blank" class="block border border-gray-200 dark:border-gray-700 rounded overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="/assets/papers/rfdiffusion3.png" alt="RFdiffusion3" class="w-full h-auto object-cover aspect-[8.5/11]">
+      </a>
+
+      <!-- Add more paper thumbnails -->
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="https://scholar.google.com/citations?user=g1nRZnwAAAAJ&hl=en"
+         class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+         target="_blank">
+        View all publications on Google Scholar →
+      </a>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-12 border-t border-gray-200 dark:border-gray-700" style="margin-top: 60px;">
+    <h2 class="text-lg font-bold mb-6">Blog</h2>
+
+    <div class="space-y-4">
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Feb 2024</div>
+        <div class="text-sm">
+          <a href="/blog/building-learning-machines.html" style="color: #0066cc;" class="hover:underline">Building Learning Machines</a>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Feb 2022</div>
+        <div class="text-sm">
+          <a href="/blog/pegRNA-design.html" style="color: #0066cc;" class="hover:underline">Understanding the Influence of pegRNA sequence on Prime Editing outcomes</a>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">May 2021</div>
+        <div class="text-sm">
+          <a href="/blog/resnet-antibody-surface.html" style="color: #0066cc;" class="hover:underline">Are ResNets Antibody Surface Learners?</a>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="text-sm text-gray-500 dark:text-gray-400 w-24 flex-shrink-0">Jan 2020</div>
+        <div class="text-sm">
+          <a href="/blog/first-post.html" style="color: #0066cc;" class="hover:underline">Rohith Krishna, First Post</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos / Talks Section -->
+  <section id="videos" class="py-12 border-t border-gray-200 dark:border-gray-700" style="margin-top: 60px;">
+    <h2 class="text-lg font-bold mb-6">Videos</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Talk 3 -->
+      <div>
+        <div class="aspect-video rounded overflow-hidden mb-2">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/cx7l9ZGFZkw?start=1193"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            class="w-full h-full">
+          </iframe>
+        </div>
+        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Quanta Magazine coverage of RF All-Atom</h3>
+      </div>
+
+      <!-- Talk 2 -->
+      <div>
+        <div class="aspect-video rounded overflow-hidden mb-2">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/PARZP6GWJ0w"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            class="w-full h-full">
+          </iframe>
+        </div>
+        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Molecular ML reading group</h3>
+      </div>
+
+      <!-- Talk 1 -->
+      <div>
+        <div class="aspect-video rounded overflow-hidden mb-2">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/LAQ4-E0Cd8Q"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            class="w-full h-full">
+          </iframe>
+        </div>
+        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Valence Labs</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-gray-200 dark:border-gray-700 mt-12">
+    <p class="text-sm text-gray-500 dark:text-gray-400 text-center">
+      © 2025 Rohith Krishna
+    </p>
+  </footer>
+
+    </main>
   </div>
-</section> 
+
+  <!-- Dark mode toggle script -->
+  <script>
+    // Simple dark mode toggle (optional - remove if not needed)
+    const html = document.documentElement;
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (currentTheme === 'dark') {
+      html.classList.add('dark');
+    }
+
+    // You can add a toggle button later if needed
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding the Influence of pegRNA sequence on Prime Editing outcomes - Rohith Krishna</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+  <div class="max-w-3xl mx-auto px-6" style="padding-top: 60px; padding-bottom: 60px;">
+    <div class="mb-8">
+      <a href="/" style="color: #0066cc;" class="text-sm hover:underline">← Back to home</a>
+    </div>
+
+    <article class="prose prose-sm max-w-none">
+      <h1 class="text-3xl font-bold mb-2">Understanding the Influence of pegRNA sequence on Prime Editing outcomes</h1>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-8">February 7, 2022</p>
+
+      <p><em>This was written as a reflection for BIOC 541. I have no intentions of conducting this study, if you do and have cool results, let me know!</em></p>
+
+      <p>In previous work <a href="https://www.sciencedirect.com/science/article/pii/S0092867421010655?via%3Dihub" style="color: #0066cc;" class="hover:underline">(Chen et al. Cell 2021)</a>, it was shown that silent mutations could improve prime editing efficiency. In this case, targeted silent mutations that reduced G-C to C-G mutations that would be targeted by the MMR pathway. While this has worked well, there has never been a systematic investigation of silent pegRNA mutations and their effect on prime editing outcomes. Since there are probably other pathways that reduce prime editing efficiency, having a set of design rules for pegRNAs could improve prime editing outcomes.</p>
+
+      <p>I propose creating a large library of pegRNAs that all edit a single locus in HEK293 cells. I would set up 384 well plate with each well having a different pegRNA. The locus can be amplified by PCR with a barcode for each well and then sequenced by NGS. The sequencing should have the well identified and the outcome of the editing. Using this information, I would gather motifs that performed well and poorly and try to find any patterns. If patterns are apparent, more pegRNAs can be designed using the rules that were learned from the initial experiment to validate that they are indeed design rules that could be used. After validation at a single locus, the design rules can be validated by designing  pegRNAs for different loci and cell lines.</p>
+
+      <p>I expect that there are certain motifs that contribute to poor prime editing outcomes. Some of these motifs might uncover other pathways that compete with successful prime editing outcomes other than MMR. I expect a randomized approach will be able to find patterns between sequence and prime editing outcome given a large enough dataset. With sufficient data, I could see an attention based model being trained on these short sequences that makes a coarse prediction of efficiency and could potentially be inverted to design efficient pegRNAs.</p>
+
+      <p>Motifs that have poor prime editing outcomes could be combined with a CRISPRi experiment to further understand what pathways are involved in preventing those editing experiments from integrating new genes. I think this approach has the potential to both improve the prime editing method and improve our understanding of the underlying mechanisms.</p>
+    </article>
+  </div>
+
+</body>
+</html>
